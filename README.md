@@ -1,5 +1,7 @@
 # 欢迎来到 Among Us Revamped！（汉化版）by 芙酱awa和這是名字awa
 
+# We were only responsible for translating all the code in this project; we did not plagiarize. We hope the author will be understanding, as we have already indicated the source.
+
 <p align="center">
 
 <center>
@@ -13,6 +15,12 @@
 </center>
 
 </p>
+
+---
+
+# 该作者的链接在上方请关注他
+
+---
 
 # 💡 安装方法：
 

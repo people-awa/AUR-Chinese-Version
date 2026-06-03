@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AmongUsRevamped;
 
-// 来源：https://github.com/tukasa0001/TownOfHost
+// Credit: https://github.com/tukasa0001/TownOfHost
 public class ClientOptionItem
 {
     public static SpriteRenderer CustomBackground;
@@ -35,16 +35,12 @@ public class ClientOptionItem
 
                 ToggleButtonBehaviour closeButton = UnityEngine.Object.Instantiate(mouseMoveToggle, CustomBackground.transform);
                 closeButton.transform.localPosition = new(2.6f, -2.3f, -6f);
-                closeButton.name = "返回";
-                closeButton.Text.text = "返回";
+                closeButton.name = "Back";
+                closeButton.Text.text = "Back";
                 closeButton.Background.color = Palette.DisabledGrey;
-
                 var closePassiveButton = closeButton.GetComponent<PassiveButton>();
                 closePassiveButton.OnClick = new();
-                closePassiveButton.OnClick.AddListener(new Action(() =>
-                {
-                    CustomBackground.gameObject.SetActive(false);
-                }));
+                closePassiveButton.OnClick.AddListener(new Action(() => { CustomBackground.gameObject.SetActive(false); }));
 
                 UiElement[] selectableButtons = optionsMenuBehaviour.ControllerSelectable.ToArray();
                 PassiveButton leaveButton = null;
@@ -59,7 +55,6 @@ public class ClientOptionItem
                         case "LeaveGameButton":
                             leaveButton = button.GetComponent<PassiveButton>();
                             break;
-
                         case "ReturnToGameButton":
                             returnButton = button.GetComponent<PassiveButton>();
                             break;
@@ -70,10 +65,9 @@ public class ClientOptionItem
 
                 ToggleButtonBehaviour modOptionsButton = UnityEngine.Object.Instantiate(mouseMoveToggle, generalTab);
                 modOptionsButton.transform.localPosition = leaveButton?.transform.localPosition ?? new(0f, -2.4f, 1f);
-                modOptionsButton.name = "AUR 设置";
-                modOptionsButton.Text.text = "AUR 设置";
+                modOptionsButton.name = "AUR Options";
+                modOptionsButton.Text.text = "AUR 选项";
                 modOptionsButton.Background.color = new Color32(0, 165, 255, byte.MaxValue);
-
                 var modOptionsPassiveButton = modOptionsButton.GetComponent<PassiveButton>();
                 modOptionsPassiveButton.OnClick = new();
                 modOptionsPassiveButton.OnClick.AddListener(new Action(() =>
@@ -82,12 +76,8 @@ public class ClientOptionItem
                     CustomBackground.gameObject.SetActive(true);
                 }));
 
-                if (leaveButton != null && leaveButton.transform != null)
-                    leaveButton.transform.localPosition = new(-1.35f, -2.411f, -1f);
-
-                if (returnButton != null)
-                    returnButton.transform.localPosition = new(1.35f, -2.411f, -1f);
-
+                if (leaveButton != null && leaveButton.transform != null) leaveButton.transform.localPosition = new(-1.35f, -2.411f, -1f);
+                if (returnButton != null) returnButton.transform.localPosition = new(1.35f, -2.411f, -1f);
                 OptionButtons = [];
             }
 
@@ -96,14 +86,11 @@ public class ClientOptionItem
 
             ToggleButton.transform.localPosition = new(
                 (OptionButtons.Count - 1) % 3 == 0 ? -2.6f : ((OptionButtons.Count - 1) % 3 == 1 ? 0f : 2.6f),
-                2.2f - (0.5f * ((OptionButtons.Count - 1) / 3)),
-                -6f
-            );
+                           2.2f - (0.5f * ((OptionButtons.Count - 1) / 3)),
+                           -6f);
 
-            // ⚠️ 这里的 name 是“显示给玩家看的选项名称”，可以汉化
             ToggleButton.name = name;
             ToggleButton.Text.text = name;
-
             var passiveButton = ToggleButton.GetComponent<PassiveButton>();
             passiveButton.OnClick = new();
 
@@ -168,11 +155,7 @@ public class ClientOptionItem
     {
         if (ToggleButton == null) return;
 
-        Color32 color =
-            Config is { Value: true }
-                ? new Color32(0, 165, 255, byte.MaxValue)
-                : new Color32(77, 77, 77, byte.MaxValue);
-
+        Color32 color = Config is { Value: true } ? new(0, 165, 255, byte.MaxValue) : new Color32(77, 77, 77, byte.MaxValue);
         ToggleButton.Background.color = color;
         ToggleButton.Rollover?.ChangeOutColor(color);
     }

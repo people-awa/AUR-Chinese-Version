@@ -72,13 +72,13 @@ public static class Utils
         switch (tab)
         {
             case TabGroup.SystemSettings:
-                return "System Settings";
+                return "系统设置";
             case TabGroup.CustomRoleSettings:
-                return "Custom Roles";
+                return "自定义角色";
             case TabGroup.ModSettings:
-                return "Gameplay Settings";
+                return "游玩设置";
             case TabGroup.GamemodeSettings:
-                return "Gamemode Settings";
+                return "游戏模式设置";
             default:
                 return "";
         }

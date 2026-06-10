@@ -12,6 +12,15 @@
 <a href="https://github.com/apemv/AmongUsRevamped/releases/latest" target="_blank">
 <img src="https://img.shields.io/badge/Latest Version%20-%231DA1F2.svg?&style=for-the-badge&logo=github&logoColor=white&color=181717"/>
 </a>
+
+<a href="https://b23.tv/r3e1u0x" target="_blank">
+<img src="https://i.pinimg.com/736x/ba/89/80/ba89800eb4ab6110c8283c79a45a917c.jpg"/>
+<h6>這是名字awa </h6> 
+
+<a href="https://b23.tv/h3Hnqqf" target="_blank">
+<img src="https://i.pinimg.com/736x/ba/89/80/ba89800eb4ab6110c8283c79a45a917c.jpg"/>
+<h6>芙酱awa </h6> 
+  
 </center>
 
 </p>
@@ -29,7 +38,7 @@
   `Among Us → BepInEx → Plugins`
 
 - **如果你没有安装 BepInEx：**
-  - 下载 Releases 页面最新 `.zip`（暂未发布）
+  - 下载 Releases 页面最新 `.zip`（已发布）
   - 解压到 Among Us 游戏目录
   - 直接覆盖文件
 
